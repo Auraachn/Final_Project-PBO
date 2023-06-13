@@ -25,6 +25,59 @@ public class Dashboard extends javax.swing.JFrame {
     private double pajak = 0;
 
 
+public Dashboard() {
+        initComponents();
+        init();
+    }
+    
+    public void init(){
+        setTime();
+    }
+    
+    public boolean qtyIsZero(int qty){
+        if(qty==0){
+            JOptionPane.showMessageDialog(null,"Tolong tambahkan Jumlah dengan benar");
+            return false;
+        }
+        return true;
+    }
+    
+    public void reset(){
+        total = 0.0;
+        pajak = 0;
+        x = 0 ;
+        jSpinner1.setValue(0);
+        jSpinner2.setValue(0);
+        jSpinner3.setValue(0);
+        jSpinner4.setValue(0);
+        jSpinner5.setValue(0);
+        jSpinner6.setValue(0);
+        jSpinner7.setValue(0);
+        jSpinner8.setValue(0);
+        jSpinner9.setValue(0);
+        jTextFieldPajak.setText("0.0");
+        jTextFieldSubTotal.setText("0.0");
+        jTextFieldTotal.setText("0.0");
+        jTextArea1.setText("");
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jCheckBox5.setSelected(false);
+        jCheckBox6.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox8.setSelected(false);
+        jCheckBox9.setSelected(false);
+        btnTotal.setEnabled(true);
+        btnReceipt.setEnabled(true);
+    }
+    
+    public void dudate(){
+        pajak(total);
+        jTextFieldPajak.setText(String.valueOf(pajak));
+        jTextFieldSubTotal.setText(String.valueOf(total));
+        jTextFieldTotal.setText(String.valueOf(total+pajak));
+    }
 
   
 /////////////////////FUNGSI////////////////////////////
@@ -786,6 +839,44 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    
+    public void saham(){
+        int strukId = 15020 + (int) (Math.random()*80800);
+        jTextArea1.setText("\n*******************InvestoLearn*******************\n"
+        +"Time: " + jTextFieldTime.getText()+" Date: " + jTextFieldDate.getText()+"\n"
+        +"Struk Id: "+strukId+"\n"
+        +"****************************************************\n"
+        +"     Jumlah Lot:\t\t"+"Harga(Rp)\n");
+    }
+    
+    public void pajak(double t){
+        double persen_pajak=0.01;
+        pajak = t*persen_pajak;
+    }
+    
+    public void setTime(){
+        new Thread(new Runnable(){
+        @Override
+        public void run(){
+            while(true){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Date date = new Date();
+                SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
+                SimpleDateFormat df = new SimpleDateFormat("EEEE, dd-MM,yyyy");
+                String time = tf.format(date);
+                jTextFieldTime.setText(time.split(" ")[0]+" "+time.split(" ")[1]);
+                jTextFieldDate.setText(df.format(date));
+            }
+        }
+    }).start();
+    }
+        
+
+    
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         int qty = Integer.parseInt(jSpinner1.getValue().toString());
         if(qtyIsZero(qty)&&jCheckBox1.isSelected()){
