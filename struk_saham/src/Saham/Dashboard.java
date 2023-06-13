@@ -786,9 +786,160 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        int qty = Integer.parseInt(jSpinner1.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox1.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*910000;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel4.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox1.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        int qty = Integer.parseInt(jSpinner2.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox2.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*542500;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel8.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox2.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-  
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        int qty = Integer.parseInt(jSpinner3.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox3.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*415000;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel9.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox3.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        int qty = Integer.parseInt(jSpinner4.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox4.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*12700;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel10.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox4.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        int qty = Integer.parseInt(jSpinner5.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox5.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*680000;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel15.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox5.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        int qty = Integer.parseInt(jSpinner6.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox6.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*1137500;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel17.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox6.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+        int qty = Integer.parseInt(jSpinner7.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox7.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*197500;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel19.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox7.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox7ActionPerformed
+
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+        int qty = Integer.parseInt(jSpinner8.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox8.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*76500;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel21.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox8.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+        int qty = Integer.parseInt(jSpinner9.getValue().toString());
+        if(qtyIsZero(qty)&&jCheckBox9.isSelected()){
+            x++;
+            if(x==1){
+                saham();
+            }
+            double price = qty*56500;
+            total +=price;
+            pajak(total);
+            jTextArea1.setText(" "+jTextArea1.getText()+x+". "+jLabel23.getText()+" * "+qty+"\tRp."+price+"\n");
+            dudate();
+        }else{
+            jCheckBox9.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox9ActionPerformed
+
+  =
 /////////////////////FUNGSI////////////////////////////
 
 ///iki biru done tolong dihapus ngko///
