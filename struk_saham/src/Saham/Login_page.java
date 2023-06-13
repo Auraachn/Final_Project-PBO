@@ -158,18 +158,38 @@ public class Login_page extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
-  
-  
-  // FUNGSI BIRU
-  
-  
-  
-  
-  
-  
-  
-  
+    }// </editor-fold>
+    
+    public boolean isEmpty(){
+         if (jTextFieldUsername.getText().isEmpty()){
+             JOptionPane.showMessageDialog(null, "Username Belum Dimasukkan");
+             return false;
+         }
+         if (String.valueOf(jPasswordField.getPassword()).isEmpty()){
+             JOptionPane.showMessageDialog(null, "Password Belum Dimasukkan");
+         }
+         return true;
+     }
+    
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        if (isEmpty()) {
+        String uname = jTextFieldUsername.getText();
+        String upass = String.valueOf(jPasswordField.getPassword());
+        if (uname.equals("admin") && upass.equals("admin")) {
+            Dashboard dashboard = new Dashboard();
+            dashboard.setVisible(true);
+            dashboard.pack();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Username atau Password Salah", "Warning", 2);
+        }
+    }
+    }                                        
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {                                          
+       System.exit(0);
+    }
+ 
       // Variables declaration - do not modify                     
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnLogin;
