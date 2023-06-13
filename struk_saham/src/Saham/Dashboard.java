@@ -786,7 +786,7 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         int qty = Integer.parseInt(jSpinner1.getValue().toString());
         if(qtyIsZero(qty)&&jCheckBox1.isSelected()){
             x++;
