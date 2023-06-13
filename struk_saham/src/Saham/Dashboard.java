@@ -791,11 +791,78 @@ public class Dashboard extends javax.swing.JFrame {
   
 /////////////////////FUNGSI////////////////////////////
 
+///iki biru done tolong dihapus ngko///
+    private void btnTotalActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        if (total==0.0){
+            JOptionPane.showMessageDialog(null,"Anda belum memilih item sama sekali");
+        }else{
+            jTextArea1.setText(jTextArea1.getText()
+                    +"\n****************************************************\n"
+                    +"Pajak: \t\tRp."+pajak+"\n"
+                    +"Sub Total: \t\tRp."+total+"\n"
+                    +"Total: \t\tRp."+(total+pajak)+"\n"
+                    +"*******************Terima Kasih******************\n"
+                    +"\n\nKelompok 7\n\n"
+                    +"Denis Lizard Sambawo D.\t 21081010159\n"
+                    +"Erika Putri Lestari \t 21081010161\n"
+                    +"Mas Muhammad Aqil S. \t 21081010163\n"
+                    +"Daniel Bergas Prasetyo \t 21081010167\n"
+                    +"Aura Choirun Nisa \t 21081010173\n");
+        }
+        dudate();
+        btnTotal.setEnabled(false);
+    }                                        
+ 
+    private void btnReceiptActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(total !=0){
+            if(!btnTotal.isEnabled()){
+                try {
+                    jTextArea1.print();
+                } catch (PrinterException ex) {
+                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                btnReceipt.setEnabled(false);
+            }else{
+                JOptionPane.showMessageDialog(null,"Anda harus melakukan pentotalan transaksi terlebih dahulu");
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Anda belum melakukan transaksi apapun");
+        }
+    }                                          
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        System.exit(0);
+    }                                       
 
+    private void jTextFieldSubTotalActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
 
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        reset();
+    }                                        
 
-  
+    private void jTextFieldDateActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void jTextFieldTimeActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+    
+    int xx, xy;
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {                                     
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xx, y-xy);
+    }                                    
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {                                     
+        xx = evt.getX();
+        xy = evt.getY();
+    }
+
       // Variables declaration - do not modify                     
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnReceipt;
